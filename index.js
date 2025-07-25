@@ -11,16 +11,16 @@ app.use(express.static('public')); // Serve CSS files
 
 // GET: homepage
 app.get('/', (req, res) => {
-  res.send('<a href="/login">Please Login Here!</a>');
+  res.send('<a href="/index">Please Login Here!</a>');
 });
 
 // GET: login page
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'login.html'));
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 // POST: handle login form
-app.post('/login', (req, res) => {
+app.post('/index', (req, res) => {
   const { username, password } = req.body;
   res.send(`Username: ${username}<br>Password: ${password}`);
 });
